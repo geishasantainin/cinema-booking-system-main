@@ -26,7 +26,6 @@ class Admin:
                 for j in i:
                     actList.append(j)
 
-        #print(actList)
         while(True):
             print("----------------------------------------------------------------")
             print()

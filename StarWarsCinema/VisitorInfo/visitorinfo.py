@@ -52,9 +52,7 @@ class visitorRegistration():
 
 
 
-        print("[1]__[2]__[3]__[4]__[5]__[6]__[7]__[8]__[9]__[10]")
-        print("[11]_[12]_[13]_[14]_[15]_[16]_[17]_[18]_[19]_[20]")
-        print(" ____[21]_[22]_[23]_[24]_[25]_[26]_[27]_[28]____")
+
 
         seatNoList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26,
                       27, 28]
@@ -62,26 +60,26 @@ class visitorRegistration():
         while True:
             self.seatNo = int(input("Choose a Seat Number & Max To Max You Can Book Two Ticket  :"))
             if self.seatNo <=30:
-                
+
                 if self.seatNo in seatNoList:
                     self.bookingList.append(self.seatNo)
                     del seatNoList[self.seatNo-1]
                 else:
                     print("Ticket Already Booked")
-                print("Do You Want To Book One More Seat Enter (Yes/No)") 
-                y = input("") 
+                print("Do You Want To Book One More Seat Enter (Yes/No)")
+                y = input("")
                 if y == "Yes":
                     pass
                 else:
                     break
 
             else:
-                print("Don't Choose a Seat Number Which is Not Available")    
+                print("Don't Choose a Seat Number Which is Not Available")
 
         print(" 1. VIP-Seat     = 1000₽")
         print(" 2. NON VIP-Seat = 400₽")
         self.seatType = int(input("Select Seat Type  :"))
-        
+
         if self.seatType == 1:
             self.selectseatType = "VIP-Seat"
             self.seatFare = self.noOfvisitor*1000
