@@ -89,6 +89,6 @@ def print_halls():
         print(f"{str.upper(hall)}")
         if count % 3 == 0:
             print("____________________")
-
+# print("lalalal")
 
 
