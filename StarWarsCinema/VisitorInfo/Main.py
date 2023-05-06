@@ -1,6 +1,6 @@
 from visitorinfo import*
-from admin import*
-from account import Account, User
+from account import Account, User, Admin
+from Movie import Movie
 
 
 global ch
@@ -16,13 +16,11 @@ def ticket_show():
 
 
 def start():
-    ending = 0
-    while ending != 1:
+    while True:
         print("1. Admin Login        :")
         print("2. User Registration  :")
         print("3. User Login         :")
         print("4. Check Ticket       :")
-
 
 
         print()
@@ -30,7 +28,7 @@ def start():
 
         if ch == 1:
             adminObj = Admin()
-            adminObj.adminLogin()
+            adminObj.admin_login()
 
         if ch == 2:
             userObj = User()
@@ -41,13 +39,12 @@ def start():
             user.user_login()
 
         print("Do you want to quit? 1-Yes 0-No")
-        ans = input()
+        ans = int(input())
         if ans == 1:
-            ending = 1
-        if ans == 0:
+            break
+        elif ans == 0:
             pass
 
-start()
 
-    
+start()
 

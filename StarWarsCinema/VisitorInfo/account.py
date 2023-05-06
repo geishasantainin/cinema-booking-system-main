@@ -1,4 +1,5 @@
 from visitorinfo import*
+from functions import print_movie, print_users
 
 
 class Account:
@@ -79,7 +80,7 @@ class User(Account):
         print("------------------------------------------------------------------------------")
 
 
-class Admin(Account):
+class Admin(Account, Movie):
     login = "admin"
     password = "admin"
 
@@ -107,5 +108,25 @@ class Admin(Account):
             print()
             print("---------------------------------------------------------------")
 
+    def admin_choice(self):
+        print("1. Movies Table       :")
+        print("2. User Table         :")
+        print("3. Halls Table        :")
+        print("4. Bookings Table     :")
 
+        ch = int(input("Choose Correct option :"))
 
+        if ch == 1:
+            print_movie()
+
+        elif ch == 2:
+
+            print_users()
+
+        elif ch == 3:
+
+            print_halls()
+
+        elif ch == 4:
+
+            print_bookings()
