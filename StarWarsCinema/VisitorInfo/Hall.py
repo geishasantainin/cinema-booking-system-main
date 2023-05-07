@@ -14,4 +14,19 @@ class Hall:
     def print_movies(self, hall_name):
         Movie.print_movie()
 
+class Seat(Hall):
+    def __init__(self):
+        self.x_coord = None
+        self.y_coord = None
+        self.booked = False
+
+    def hall_create(self, name, rows, columns):
+        hall = []
+        for i in range(columns):
+            for j in range(rows):
+                hall[i][j] = 0
+
+
+
+
 
