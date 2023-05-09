@@ -1,5 +1,5 @@
 from visitorinfo import*
-from functions import print_movie, print_users, add_movie, delete_movie, delete_user
+from functions import print_movie, print_users, add_movie, delete_movie, delete_user, print_seat
 import random
 
 
@@ -127,8 +127,6 @@ class Admin(Account):
             if ch_a == 3:
                 Admin.admin_choice(self)
 
-
-
         elif ch == 2:
 
             print_users()
@@ -140,4 +138,19 @@ class Admin(Account):
                 delete_user()
             if ch_a == 2:
                 Admin.admin_choice(self)
+
+        elif ch == 3:
+
+            print("1. Star Hall       :")
+            print("2. War Hall        :")
+
+            ch_a = int(input("Choose Correct Hall :"))
+
+            if ch_a == 1:
+                print_seat()
+
+            if ch_a == 2:
+                print_seat_war()
+
+
 

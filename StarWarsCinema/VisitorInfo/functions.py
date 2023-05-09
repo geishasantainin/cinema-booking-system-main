@@ -77,7 +77,7 @@ def delete_user():
 
 def print_halls():
     halls = []
-    with open("halls.csv", 'r+', newline="") as f:
+    with open("hall1.csv", 'r+', newline="") as f:
         r = csv.reader(f)
         data = list(r)
         for i in data:
@@ -89,6 +89,42 @@ def print_halls():
         print(f"{str.upper(hall)}")
         if count % 3 == 0:
             print("____________________")
-# print("lalalal")
 
 
+def hall_create(rows, columns):
+    hall = [0] * rows
+    for i in range(rows):
+        hall[i] = [0] * columns
+    for i in range(rows):
+        for j in range (columns):
+            with open("hall1.csv", 'a+', newline="") as f:
+                w = csv.writer(f)
+                w.writerow(
+                    [i, j, hall[i][j]])
+
+
+
+def print_seat():
+    rows = 5
+    columns = 10
+    seats = []
+    with open("hall1.csv", 'r+', newline="") as f:
+        r = csv.reader(f)
+        seats = list(r)
+        lalala = []
+        for i in range(rows * columns):
+            if int(seats[i][2]) == 0:
+                lalala.append("+")
+            else:
+                lalala.append("x")
+        count = 0
+        for lala in lalala:
+            print(f'{lala} ', end='')
+            count += 1
+            if count == 10:
+                count = 0
+                print("")
+
+
+hall_create(5, 10)
+print_seat()

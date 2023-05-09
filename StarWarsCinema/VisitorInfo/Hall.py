@@ -20,11 +20,7 @@ class Seat(Hall):
         self.y_coord = None
         self.booked = False
 
-    def hall_create(self, name, rows, columns):
-        hall = []
-        for i in range(columns):
-            for j in range(rows):
-                hall[i][j] = 0
+
 
 
 
