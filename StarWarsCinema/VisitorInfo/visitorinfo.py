@@ -90,7 +90,7 @@ class visitorRegistration():
 class visitorDataCsv(visitorRegistration):
     def saveInfo(self):
         try:
-            with open("visitorData.csv", 'r+', newline="") as f:
+            with open("bookingdata1.csv", 'r+', newline="") as f:
                 r =  csv.reader(f)
                 data = list(r)
                 for  i in data:
@@ -103,7 +103,7 @@ class visitorDataCsv(visitorRegistration):
         except:
             print("File has not available")
         finally:     
-            with open("visitorData.csv", 'a+', newline="") as f:
+            with open("bookingdata1.csv", 'a+', newline="") as f:
                 w =  csv.writer(f)
                 w.writerow([self.autoInc,self.visitorName,self.noOfvisitor,self.departureLocation,self.destinationLocation,self.ddmmyyyy,self.bookingList,self.selectseatType,self.seatFare])
                 print("Data Save successfully")

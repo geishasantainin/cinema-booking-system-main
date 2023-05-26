@@ -1,6 +1,7 @@
-from visitorinfo import*
-from functions import print_movie, print_users, add_movie, delete_movie, delete_user, print_seat
+from functions import print_movie, print_users, add_movie, delete_movie, delete_user, print_seat1, print_seat2,\
+    print_bookings1, print_bookings2
 import random
+from visitorinfo import*
 
 
 class Account:
@@ -15,7 +16,7 @@ class User(Account):
     def user_registration(self):
         print("Enter your login:")
         self.login = input()
-        print("Enter your password:")
+        print("Enter your password(only digitals):")
         self.password = input()
         self.id = random.randrange(1000000, 9999999, 1)
         with open("userdata.csv", 'a+', newline="") as f:
@@ -47,32 +48,6 @@ class User(Account):
                 print("Enter correct username and password")
                 print()
                 print("---------------------------------------------------------------")
-
-    def ticket_show(self):
-        with open("userdata.csv", 'r+', newline="") as f:
-            r = csv.reader(f)
-            data = list(r)
-            self.id = int(input("Enter Your Booking Id  :"))
-            for i in range(len(data)):
-                if self.id == str(data[i][0]):
-                    print("------------------------------------------------------------------------------")
-                    print("                              StarWars Cinema                                 ")
-                    print("------------------------------------------------------------------------------")
-                    print()
-                    print(" e_Ticket :", "Address              : Fontannaya str, 89")
-                    print("           ", "Phone No\Mob No             : 89990599907,89244219384            ")
-                    print()
-                    print("", bln[3], "------------->", bln[4], "            ", "        Visitor Id:", bln[0])
-                    print()
-                    print(" Visitor Name :", bln[1], "              ", "Amount of seats :", bln[2])
-                    print("______________________________________________________________________________")
-                    print()
-                    print(" Date of Booking :", bln[5], "              ", "Seat No :", bln[6], "              ")
-                    print()
-                    print(" Seat Type :       ", bln[7], "                                                           ")
-                    print(" Price :       ", bln[8], '₽', "                                                           ")
-                    print()
-                    print("------------------------------------------------------------------------------")
 
 
 class Admin(Account):
@@ -106,13 +81,12 @@ class Admin(Account):
     def admin_choice(self):
         print("1. Movies Table       :")
         print("2. User Table         :")
-        print("3. Halls Table        :")
-        print("4. Bookings Table     :")
+        print("3. Bookings Table     :")
 
         ch = int(input("Choose Correct option :"))
 
         if ch == 1:
-            print_movie()
+            print_movie("FALCON")
             print("1. Add Movie       :")
             print("2. Del Movie       :")
             print("3. Exit            :")
@@ -140,17 +114,19 @@ class Admin(Account):
                 Admin.admin_choice(self)
 
         elif ch == 3:
+            print("1. FALCON Hall")
+            print("2. STARWARS Hall")
 
-            print("1. Star Hall       :")
-            print("2. War Hall        :")
+            ch = int(input("Choose Correct option :"))
 
-            ch_a = int(input("Choose Correct Hall :"))
+            if ch == 1:
+                print_seat1()
+                print_bookings1()
+            elif ch == 2:
+                print_seat2()
+                print_bookings2()
 
-            if ch_a == 1:
-                print_seat()
 
-            if ch_a == 2:
-                print_seat_war()
 
 
 
