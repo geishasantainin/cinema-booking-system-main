@@ -1,5 +1,6 @@
 import csv
 
+
 def print_movie(hall_name):
     movies = []
     with open("movie_info.csv", 'r+', newline="") as f:
@@ -272,10 +273,12 @@ def print_bookings1():
             for j in i:
                 bookings.append(j)
     count = 0
+    print("____________________")
     for book in bookings:
+
         count += 1
         print(f"{book}")
-        if count % 3 == 0:
+        if count % 5 == 0:
             print("____________________")
 
 def print_bookings2():
@@ -316,3 +319,32 @@ def print_bookings2():
     #                 print()
     #                 print()
     #                 print("------------------------------------------------------------------------------")
+def print_bookings_user(user_id):
+    bookings = []
+
+    print("")
+    with open("bookingdata1.csv", 'r+', newline="") as f:
+        r = csv.reader(f)
+        data = list(r)
+        for i in data:
+            for j in i:
+                bookings.append(j)
+    count = 0
+    print("____________________")
+    for book in bookings:
+        if book == user_id:
+            count += 1
+            print(f"{book}")
+            if count % 5 == 0:
+                print("____________________")
+
+
+
+    print("1. FALCON Hall")
+    print("2. STARWARS Hall")
+
+    ch = int(input("Choose Hall :"))
+    if ch == 1:
+        booking_seat1(int(user.password), user.login)
+    elif ch == 2:
+        booking_seat2(int(user.password), user.login)

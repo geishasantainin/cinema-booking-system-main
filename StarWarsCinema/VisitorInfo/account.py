@@ -39,7 +39,7 @@ class User(Account):
             self.login = input("Enter  username  :")
             self.password = input("Enter  password  :")
             for i in range(len(data)):
-                if self.login == str(data[i][1]) and self.password == str(data[i][2]):
+                if self.login == str(data[i][1]) and int(self.password) == int(data[i][2]):
                     print()
                     print("Login successfully")
                     flag = 1

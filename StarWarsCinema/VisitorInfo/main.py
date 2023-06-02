@@ -3,13 +3,14 @@ from account import Account, User, Admin
 from functions import hall_create1, hall_create2, booking_seat1, booking_seat2
 
 
-# hall_create1(5, 10)
-# hall_create2(5, 10)
+#hall_create1(5, 10)
+#hall_create2(5, 10)
 
 global ch
 
 print("---------------------------------------------------")
 print("         Welcome To StarWars Cinema Booking        ")
+print("                                                   ")
 print("---------------------------------------------------")
 print()
 
